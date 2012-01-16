@@ -1,0 +1,17 @@
+diff --git a/drv/fb/fb24_32.c b/drv/fb/fb24_32.c
+index bde49d9..50c8d78 100644
+--- a/drv/fb/fb24_32.c
++++ b/drv/fb/fb24_32.c
+@@ -627,10 +627,10 @@ fb24_32ModifyPixmapHeader (DrvPixmapPtr   pPixmap,
+ 	    devKind = BitmapBytePad(w * 24);
+ 	}
+     }
+-#if 0
++//#if 0
+ 
+     return miModifyPixmapHeader(pPixmap, width, height, depth, bitsPerPixel,
+ 				devKind, pPixData);	
+-#endif
++//#endif
+ }		
+ 
