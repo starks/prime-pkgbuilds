@@ -28,7 +28,7 @@ _gitname="linux.git"
 # set _gitrev to a git revision (man gitrevisions) like a tag, a commit sha1
 # hash or a branch name to build from this tree instead of master
 
-_gitrev="drm-prime-dmabuf"
+_gitrev="9f877b95d836ffbec66d5db7e2359d748900a998"
 
 ####################################################################
 # KERNEL CONFIG FILES

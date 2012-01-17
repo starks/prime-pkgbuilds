@@ -14,12 +14,12 @@ url="http://xorg.freedesktop.org"
 makedepends=('pixman' 'libx11' 'mesa' 'libgl' 'xf86driproto' 'xcmiscproto' 'xtrans' 'bigreqsproto' 'randrproto' 'inputproto' 'fontsproto' 'videoproto' 'compositeproto' 'recordproto' 'scrnsaverproto' 'resourceproto' 'xineramaproto' 'libxkbfile' 'libxfont' 'renderproto' 'libpciaccess' 'libxv' 'xf86dgaproto' 'libxmu' 'libxrender' 'libxi' 'dmxproto' 'libxaw' 'libdmx' 'libxtst' 'libxres' 'xorg-xkbcomp' 'xextproto' 'xorg-util-macros' 'xorg-font-util' 'glproto' 'dri2proto' 'git')
 options=('!libtool')
 source=(autoconfig-nvidia.patch
-        xvfb-run
+	xvfb-run
         xvfb-run.1
         10-quirks.conf
 	buildfix.patch)
-sha1sums=('0249b892f27243d8fe6fe6d226bf4c2391cedf49'
-          'c94f742d3f9cabf958ae58e4015d9dd185aabedc'
+sha1sums=('06dd0bc1fada1455381c3217b4334bd32caeebf3'
+	  'c94f742d3f9cabf958ae58e4015d9dd185aabedc'
           '6838fc00ef4618c924a77e0fb03c05346080908a'
           '993798f3d22ad672d769dae5f48d1fa068d5578f'
 	  '522adc1ba304db4827772d5d7fed0405e9f4be84')
@@ -32,7 +32,7 @@ build() {
   msg "Connecting to git.freedesktop.org GIT server...."
 
   if [ -d ${_gitname} ]; then
-      cd ${_gitname} && git pull origin
+      cd ${_gitname} ## && git pull origin
       msg "The local files are updated."
   else
       git clone ${_gitroot}
@@ -50,7 +50,7 @@ build() {
   msg "Applying Patches..."
 
   # Use nouveau/nv/nvidia drivers for nvidia devices
-  patch -Np1 -i ../autoconfig-nvidia.patch
+  #patch -Np1 -i ../autoconfig-nvidia.patch
   patch -Np1 -i ../buildfix.patch
 
   ./autogen.sh --prefix=/usr \
